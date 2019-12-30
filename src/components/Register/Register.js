@@ -23,8 +23,8 @@ class Register extends React.Component {
         this.setState({password: event.target.value});
     }
 
-    onSubmitSignin = () => {
-        fetch('http://localhost:4000/register', {
+    onSubmitRegister = () => {
+        fetch('http://localhost:4001/register', {
             method: 'post',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -48,7 +48,7 @@ class Register extends React.Component {
         return (
             <article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-1 mw6 shadow-5 center">
                 <main className="pa4 black-80">
-                <form className="measure">
+                <div className="measure">
                 <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                     <legend className="f2 fw6 ph0 mh0">Register</legend>
                     <div className="mt3">
@@ -74,11 +74,11 @@ class Register extends React.Component {
                     </div>
                 </fieldset>
                 <div className="">
-                    <input onClick={this.onSubmitSignin}
+                    <input onClick={this.onSubmitRegister}
                     className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
                     type="submit" value="Register"/>
                 </div>
-                </form>
+                </div>
                 </main>
         </article>
         )
